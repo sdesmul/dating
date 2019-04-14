@@ -1,9 +1,9 @@
 <?php
 /**
- * another test project
- * Created by PhpStorm.
+ * index page for my dating website
  * User: Samantha DeSmul
  * Date: 4/10/2019
+ * Filename: index.php
  *
  */
 
