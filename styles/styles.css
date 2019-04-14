@@ -10,10 +10,10 @@
 #navbar{
     margin-bottom: 3%;
 }
-
-#homepage{
-
+.indent {
+    margin-left: 10%;
 }
+
 a.btn.btn-primary {
     margin-bottom: 10%;
 }
