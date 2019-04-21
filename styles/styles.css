@@ -1,15 +1,19 @@
-#header{
+#header {
     text-align: center;
 }
-#hear{
+
+#hear {
     text-align: center;
 }
-#create_profile{
+
+#create_profile {
     text-align: center;
 }
-#navbar{
+
+#navbar {
     margin-bottom: 3%;
 }
+
 .indent {
     margin-left: 10%;
 }
@@ -17,3 +21,16 @@
 a.btn.btn-primary {
     margin-bottom: 10%;
 }
+
+label, input {
+    width: 100%;
+}
+
+#note {
+    background-color: #f0f1f1;
+}
+
+.policy{
+    color: #387fbd;
+}
+
