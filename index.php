@@ -23,11 +23,34 @@ $f3 = Base::instance();
 $f3->set('DEBUG', 3);
 
 //Define a default root, there can be multiple routes
-$f3->route('GET /', function(){
-    //display a view
-    $view = new Template();
-    echo $view->render('views/home.html');
+$f3->route('GET /', function () {
+    //display a view;
+    echo \Template::instance()->render('views/home.html');
 });
+
+
+$f3->route('GET /interests', function ($f3) {
+    //display a view
+    echo \Template::instance()->render('views/interests.html');
+});
+
+$f3->route('GET /personal-info', function ($f3) {
+    //display a view
+    echo \Template::instance()->render('views/personal_info.html');
+});
+
+$f3->route('GET /profile', function ($f3) {
+    //display a view
+    echo \Template::instance()->render('views/profile.html');
+});
+
+$f3->route('GET /profile-summary', function ($f3) {
+    //display a view
+    echo \Template::instance()->render('views/profile_summary.html');
+});
+
+
+
 
 //run Fat-free
 $f3->run();
