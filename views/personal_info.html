@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
- <link rel="stylesheet"  href="../styles/styles.css">
- <link rel="stylesheet" href="">
+    <link rel="stylesheet"  href="../styles/styles.css">
+
 
   <!-- reference your copy Font Awesome here (from our CDN or by hosting yourself) -->
 
@@ -15,21 +15,22 @@
 
     <title>Personal Information</title>
   </head>
+  <body>
      <nav id="navbar" class="navbar navbar-light bg-light">
             <a class="navbar-brand" href="{{@BASE}}"> Sphynx dating</a>
      </nav>
 
 
-<!-- main container for the page-->
-    <div class="container shadow-sm p-5  m-5 bg-white rounded">
+     <!-- main container for the page-->
+    <div class="container shadow-sm p-3  m-5 bg-white rounded mx-auto">
         <h1>Personal Information</h1>
         <hr>
-        <form method="post" action=profile.html>
+        <form method="get" action="profile">
       <div class="row">
       <!--right side of the container -->
         <div class="col-lg-8">
 
-             <label class="w-100">First Name<br>
+             <label class="w-100"><strong>First Name</strong><br>
 
              <div class="input-group mb-3">
                <input type="text" name="first_name" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
@@ -40,48 +41,49 @@
 
              </label><br>
 
-              <label class="w-100">Last Name<br>
-              <input class="w-100" type="text" name="last_name">
+              <label class="w-100" ><strong>Last Name</strong><br>
+              <input class="w-100 form-control" type="text" name="last_name">
               </label><br>
 
-             <label class="w-100">Age<br>
-             <input class="w-100"  type="text" name="age">
+             <label class="w-100"><strong>Age</strong><br>
+             <input class="w-100 form-control"  type="text" name="age">
              </label><br>
 
-              <label class="w-100">Gender<br>
-             </label>
+             <label class="w-100"><strong>Gender</strong><br>
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" id="female" name="gender" class="custom-control-input">
+              <label class="custom-control-label" for="female">Female</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" id="male" name="gender" class="custom-control-input">
+              <label class="custom-control-label" for="male">Male</label>
+            </div>
+            </label>
 
-
-<div class="custom-control custom-radio custom-control-inline">
-  <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
-  <label class="custom-control-label" for="customRadioInline1">1</label>
-</div>
-<div class="custom-control custom-radio custom-control-inline">
-  <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
-  <label class="custom-control-label" for="customRadioInline2">2</label>
-</div>
-
-            <label class="w-100">Phone Number<br>
-            <input class="w-100"  type="text" name="phone">
+            <label class="w-100"><strong>Phone Number</strong><br>
+            <input class="w-100 form-control"  type="text" name="phone">
             </label>
 
 
 
         </div>
         <!--left side of the container-->
-        <div class="col-lg-4 col-4">
+        <div class="col-lg-4 ">
             <p id="note" class="mt-4 p-2"><strong>Note:</strong> All information entered is protected by our
             <span class="policy">privacy policy</span>. Profile information can only be viewed by others
             with your permission.</p>
-       </div>
-       </div>
-       <a href="" class="btn btn-primary float-right">Next ></a>
-        </form>
-      </div>
 
+            <input type="submit" href="profile" class="btn btn-primary float-right" name="next" value="Next >">
+       </div>
+       </div>
+
+        </form>
+        </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>  </body>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+   </body>
 </html>
