@@ -4,14 +4,68 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link rel="stylesheet"  href="../styles/styles.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Profile Summary</title>
   </head>
   <body>
-    <h1>Hello, world!</h1>
+     <nav id="navbar" class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="{{@BASE}}"> Sphynx dating</a>
+     </nav>
+
+     <div class="container shadow-sm p-3 mb-5 bg-white rounded">
+
+
+
+               <div class="row">
+               <!--right side of the container -->
+                 <div class="col-lg-6 col-6">
+                    <table class="table">
+                      <tbody>
+                        <tr>
+                          <td>Name: {{$_SESSION['first_name']}} {{$_SESSION['last_name']}}</td>
+                          </tr>
+                           <tr>
+                          <td>Gender: {{$_SESSION['gender']}}</td>
+                           <tr>
+                           </tr>
+                          <td>Age: {{$_SESSION['age']}}</td>
+                           <tr>
+                           </tr>
+                          <td>Phone: {{$_SESSION['phone']}}</td>
+                           <tr>
+                           </tr>
+                          <td>Email: {{$_SESSION['email']}}</td>
+                           <tr>
+                           </tr>
+                          <td>State: {{$_SESSION['state']}}</td>
+                           <tr>
+                           </tr>
+                          <td>Seeking: {{$_SESSION['seeking']}}</td>
+                           <tr>
+                           </tr>
+                          <td>Interests:  {{$_SESSION['outdoorActivities[]']}} {{$_SESSION['indoorActivities[]']}}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                 </div>
+
+                 <!--left side of the container-->
+                 <div class="col-lg-6 col-6">
+
+                     <img src="../images/user_icon.png" id = "icon" class="img-fluid rounded" alt="Responsive image">
+
+
+
+                 <input type="submit" class="btn btn-primary float-right mt-5" name="next" value="Next >">
+                 </div>
+                 </div>
+                 </form>
+                 <p>Biography:</p>
+          </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

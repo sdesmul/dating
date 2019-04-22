@@ -1,22 +1,151 @@
-<!doctype html>
+
+
+
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+    <meta charset="UTF-8">
+    <title>Personal Interests Page</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"
+          integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy"
+          crossorigin="anonymous">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
 
-    <title>Hello, world!</title>
-  </head>
-  <body>
-    <h1>Hello, world!</h1>
+    <!--Navbar-->
+       <nav id="navbar" class="navbar navbar-light bg-light">
+             <a class="navbar-brand" href="{{@BASE}}"> Sphynx dating</a>
+       </nav>
+<!--main container-->
+<div class="container shadow-sm p-3 mb-5 bg-white rounded">
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
+
+    <!-- Main Content Section -->
+    <div class="row">
+        <div class="mx-5 container p-4 border border-secondary rounded">
+            <!--            Heading-->
+            <h1>Interests</h1>
+            <hr>
+            <form action="profile-summary" method="post">
+                <div class="col-12">
+
+                    <h5>In-door Interests</h5>
+                                            <label class="custom-control custom-checkbox col-3 float-left">
+                            <input type="checkbox" name="indoorActivities[]"
+                                   value="tv"
+
+                            > <span class="pl-1">tv</span>
+                        </label>
+                                            <label class="custom-control custom-checkbox col-3 float-left">
+                            <input type="checkbox" name="indoorActivities[]"
+                                   value="movies"
+
+                            > <span class="pl-1">movies</span>
+                        </label>
+                                            <label class="custom-control custom-checkbox col-3 float-left">
+                            <input type="checkbox" name="indoorActivities[]"
+                                   value="cooking"
+
+                            > <span class="pl-1">cooking</span>
+                        </label>
+                                            <label class="custom-control custom-checkbox col-3 float-left">
+                            <input type="checkbox" name="indoorActivities[]"
+                                   value="board games"
+
+                            > <span class="pl-1">board games</span>
+                        </label>
+                                            <label class="custom-control custom-checkbox col-3 float-left">
+                            <input type="checkbox" name="indoorActivities[]"
+                                   value="puzzles"
+
+                            > <span class="pl-1">puzzles</span>
+                        </label>
+                                            <label class="custom-control custom-checkbox col-3 float-left">
+                            <input type="checkbox" name="indoorActivities[]"
+                                   value="reading"
+
+                            > <span class="pl-1">reading</span>
+                        </label>
+                                            <label class="custom-control custom-checkbox col-3 float-left">
+                            <input type="checkbox" name="indoorActivities[]"
+                                   value="playing cards"
+
+                            > <span class="pl-1">playing cards</span>
+                        </label>
+                                            <label class="custom-control custom-checkbox col-3 float-left">
+                            <input type="checkbox" name="indoorActivities[]"
+                                   value="video games"
+
+                            > <span class="pl-1">video games</span>
+                        </label>
+                                    </div>
+                <br>
+
+                <div class="col-12 mt-5">
+                    <h5>Out-door Interests</h5>
+                                            <label class="custom-control custom-checkbox col-3 float-left">
+                            <input type="checkbox" name="outdoorActivities[]"
+                                   value="hiking"
+
+                            > <span class="pl-1">hiking</span>
+                        </label>
+                                            <label class="custom-control custom-checkbox col-3 float-left">
+                            <input type="checkbox" name="outdoorActivities[]"
+                                   value="biking"
+
+                            > <span class="pl-1">biking</span>
+                        </label>
+                                            <label class="custom-control custom-checkbox col-3 float-left">
+                            <input type="checkbox" name="outdoorActivities[]"
+                                   value="swimming"
+
+                            > <span class="pl-1">swimming</span>
+                        </label>
+                                            <label class="custom-control custom-checkbox col-3 float-left">
+                            <input type="checkbox" name="outdoorActivities[]"
+                                   value="collecting"
+
+                            > <span class="pl-1">collecting</span>
+                        </label>
+                                            <label class="custom-control custom-checkbox col-3 float-left">
+                            <input type="checkbox" name="outdoorActivities[]"
+                                   value="walking"
+
+                            > <span class="pl-1">walking</span>
+                        </label>
+                                            <label class="custom-control custom-checkbox col-3 float-left">
+                            <input type="checkbox" name="outdoorActivities[]"
+                                   value="climbing"
+
+                            > <span class="pl-1">climbing</span>
+                        </label>
+                        </div>
+                <!--Next button-->
+                <div class="">
+                    <div class="text-right">
+                        <input type="submit" value="Next >" name="submit" class="btn btn-primary">
+                    </div>
+                </div>
+                <!--div FOR FORM GROUPS -->
+            </form>
+            <!--End form-->
+        </div>
+    </div>
+    </div>
+    <!--    END ROW-->
+
+    <!--Bootstrap cdn's-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"
+            integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
+            crossorigin="anonymous"></script>
+</body>
 </html>

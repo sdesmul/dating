@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet"  href="../styles/styles.css">
+       <link rel="stylesheet" type="text/css" href="{{@BASE}}/styles/styles.css">
+
 
 
     <title>Profile</title>
@@ -20,10 +21,10 @@
 
         <h1><strong>Profile</strong></h1>
          <hr>
-         <form action="interests" action="post">
+         <form action="interests" method="post">
           <div class="row">
           <!--right side of the container -->
-            <div class="col-lg-6">
+            <div class="col-lg-6 col-6">
 
               <label class="w-100" ><strong>Email</strong><br>
               <input class="w-100 form-control" type="text" name="email">
@@ -32,10 +33,10 @@
               <label class="w-100" ><strong>State</strong><br>
               <select class="custom-select w-10">
                   <option selected>Pick a State</option>
-                  <option value="1">Washington</option>
-                  <option value="2">California</option>
-                  <option value="3">Canada</option>
-                  <option value="4">Oregon</option>
+                  <option name="state" value="washington">Washington</option>
+                  <option name="state" value="california">California</option>
+                  <option name="state" value="idaho">Canada</option>
+                  <option name="state" value="oregon">Oregon</option>
               </select>
               </label><br>
 
@@ -43,7 +44,7 @@
                 <label><strong>Seeking</strong><br>
                 <div class="custom-control custom-radio custom-control-inline">
                   <input type="radio" id="prefered_female" name="prefered_gender" class="custom-control-input">
-                  <label class="custom-control-label" for="prefered_female"><strong>Female</strong></label>
+                  <label class="custom-control-label" for="prefered_female" ><strong>Female</strong></label>
                 </div>
                 <div class="custom-control custom-radio custom-control-inline">
                   <input type="radio" id="prefered_male" name="prefered_gender" class="custom-control-input">
@@ -53,16 +54,16 @@
 
             </div>
 
-            </div>
             <!--left side of the container-->
-            <div class="col-lg-6">
+            <div class="col-lg-6 col-6">
 
             <label><strong>Biography</strong><br>
             <textarea class="scroll"></textarea>
             </label>
 
 
-            <input type="submit" href="interests" class="btn btn-primary float-right" name="next" value="Next >">
+            <input type="submit" class="btn btn-primary float-right mt-5" name="next" value="Next >">
+            </div>
             </div>
             </form>
      </div>

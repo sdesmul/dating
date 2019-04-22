@@ -22,7 +22,11 @@ a.btn.btn-primary {
     margin-bottom: 10%;
 }
 
-label, input {
+input.btn.btn-primary.float-right {
+    margin-left: 91%;
+}
+
+label {
     width: 100%;
 }
 
@@ -30,7 +34,13 @@ label, input {
     background-color: #f0f1f1;
 }
 
-.policy{
+.policy {
     color: #387fbd;
 }
 
+
+.scroll {
+    overflow-y: scroll;
+    width: 100%;
+    min-height: 110px;
+}

@@ -7,6 +7,9 @@
  *
  */
 
+//Start a session
+session_start();
+
 //turn on error reporting
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
@@ -29,22 +32,41 @@ $f3->route('GET /', function () {
 });
 
 
-$f3->route('GET /interests', function ($f3) {
+$f3->route('POST /interests', function ($f3) {
+
+    $indoorActivities[] = array();
+    $_SESSION['indoorActivities[]'] = $_POST['indoorActivities[]'];
+
+    $outdoorActivities[] = array();
+    $_SESSION['outdoorActivities[]'] = $_POST['outdoorActivities[]'];
+
     //display a view
     echo \Template::instance()->render('views/interests.html');
 });
 
 $f3->route('GET /personal-info', function ($f3) {
+    $_SESSION['first_name'] = $_POST['first_name'];
+    $_SESSION['last_name'] = $_POST['first_name'];
+    $_SESSION['age'] = $_POST['age'];
+    $_SESSION['gender'] = $_POST['gender'];
+    $_SESSION['phone'] = $_POST['phone'];
+
     //display a view
     echo \Template::instance()->render('views/personal_info.html');
 });
 
-$f3->route('GET /profile', function ($f3) {
+$f3->route('POST /profile', function ($f3) {
+
+    $_SESSION['email'] = $_POST['email'];
+    $_SESSION['state'] = $_POST['state'];
+    $_SESSION['first_name'] = $_POST['first_name'];
+    $_SESSION['first_name'] = $_POST['first_name'];
+
     //display a view
     echo \Template::instance()->render('views/profile.html');
 });
 
-$f3->route('GET /profile-summary', function ($f3) {
+$f3->route('POST /profile-summary', function ($f3) {
     //display a view
     echo \Template::instance()->render('views/profile_summary.html');
 });
