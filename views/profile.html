@@ -31,7 +31,7 @@
               </label><br>
 
               <label class="w-100" ><strong>State</strong><br>
-              <select class="custom-select w-10">
+              <select name="state" class="custom-select w-10">
                   <option selected>Pick a State</option>
                   <option name="state" value="washington">Washington</option>
                   <option name="state" value="california">California</option>
@@ -43,11 +43,11 @@
 
                 <label><strong>Seeking</strong><br>
                 <div class="custom-control custom-radio custom-control-inline">
-                  <input type="radio" id="prefered_female" name="prefered_gender" class="custom-control-input">
+                  <input type="radio" id="prefered_female" value="Female" name="prefered_gender" class="custom-control-input">
                   <label class="custom-control-label" for="prefered_female" ><strong>Female</strong></label>
                 </div>
                 <div class="custom-control custom-radio custom-control-inline">
-                  <input type="radio" id="prefered_male" name="prefered_gender" class="custom-control-input">
+                  <input type="radio" id="prefered_male" value="Male" name="prefered_gender" class="custom-control-input">
                   <label class="custom-control-label" for="prefered_male"><strong>Male</strong></label>
                 </div>
                 </label>
@@ -58,7 +58,7 @@
             <div class="col-lg-6 col-6">
 
             <label><strong>Biography</strong><br>
-            <textarea class="scroll"></textarea>
+            <textarea class="scroll" name="bio" ></textarea>
             </label>
 
 

@@ -46,7 +46,14 @@
                           <td>Seeking: {{$_SESSION['seeking']}}</td>
                            <tr>
                            </tr>
-                          <td>Interests:  {{$_SESSION['outdoorActivities[]']}} {{$_SESSION['indoorActivities[]']}}</td>
+                          <td>Interests:
+                          <repeat group="{{$_SESSION['outdoorActivities']}}" value="{{ @outdoor }}">
+                                  {{ @outdoor }}
+                         </repeat>
+                          <repeat group="{{$_SESSION['indoorActivities']}}" value="{{ @indoor }}">
+                                      {{ @indoor }}
+                          </repeat>
+                          </td>
                         </tr>
                       </tbody>
                     </table>
