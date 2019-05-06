@@ -18,60 +18,62 @@
      <div class="container shadow-sm p-3 mb-5 bg-white rounded">
 
 
+  <div class="row">
+                <div class="col-md-6 justify-content-start ">
 
-               <div class="row">
-               <!--right side of the container -->
-                 <div class="col-lg-6 col-6">
-                    <table class="table">
-                      <tbody>
-                        <tr>
-                          <td>Name: {{$_SESSION['first_name']}} {{$_SESSION['last_name']}}</td>
-                          </tr>
-                           <tr>
-                          <td>Gender: {{$_SESSION['gender']}}</td>
-                           <tr>
-                           </tr>
-                          <td>Age: {{$_SESSION['age']}}</td>
-                           <tr>
-                           </tr>
-                          <td>Phone: {{$_SESSION['phone']}}</td>
-                           <tr>
-                           </tr>
-                          <td>Email: {{$_SESSION['email']}}</td>
-                           <tr>
-                           </tr>
-                          <td>State: {{$_SESSION['state']}}</td>
-                           <tr>
-                           </tr>
-                          <td>Seeking: {{$_SESSION['seeking']}}</td>
-                           <tr>
-                           </tr>
-                          <td>Interests:
-                          <repeat group="{{$_SESSION['outdoorActivities']}}" value="{{ @outdoor }}">
-                                  {{ @outdoor }}
-                         </repeat>
-                          <repeat group="{{$_SESSION['indoorActivities']}}" value="{{ @indoor }}">
-                                      {{ @indoor }}
-                          </repeat>
-                          </td>
+                    <table class="table table-bordered">
+                        <tbody>
+                        <tr class="">
+                            <td>Name: {{exists($fname) ? $fname : $_SESSION['fname']}} </td>
                         </tr>
-                      </tbody>
+                        <tr>
+                            <td>Gender: {{exists($gender) ? $gender :  $_SESSION['lname']}}</td>
+                        </tr>
+                        <tr>
+                            <td>Age: {{exists($age) ? $age :  $_SESSION['age']}}</td>
+                        </tr>
+                        <tr>
+                            <td>Phone: {{exists($phone) ? $phone :  $_SESSION['phone']}}</td>
+                        </tr>
+                        <tr>
+                            <td>Email: {{exists($email) ? $email :  $_SESSION['email']}}</td>
+                        </tr>
+                        <tr>
+                            <td>State: {{exists($state) ? $state :  $_SESSION['state']}}</td>
+                        </tr>
+                        <tr>
+                            <td>Seeking: {{exists($genderLook) ? $genderLook :
+                                $_SESSION['genderLook']}}</td>
+                        </tr>
+                        <tr>
+                            <check if="{{@selectedMember == 'selectedMember' }}">
+                                <true>
+                                    <td>Interests:
+                                        <repeat group="{{@combineActivities}}"
+                                                value="{{@value}}">{{$value}}
+                                        </repeat>
+                                    </td>
+                                </true>
+                            </check>
+
+                        </tr>
+                        </tbody>
                     </table>
+                </div>
+                 <div class="col-md-6">
 
-                 </div>
+                                    <img src="../images/user_icon.png" class="ml-5" alt="account image" id="userImage">
 
-                 <!--left side of the container-->
-                 <div class="col-lg-6 col-6">
+                                    <div class="container justify-content-center text-center">
+                                        <h3>Biography</h3>
+                                        <p>
+                                            {{exists($biography) ? $biography :  $_SESSION['biography']}}
+                                        </p>
+                                    </div>
+                                </div>
 
-                     <img src="../images/user_icon.png" id = "icon" class="img-fluid rounded" alt="Responsive image">
-
-
-
-                 <input type="submit" class="btn btn-primary float-right mt-5" name="next" value="Next >">
-                 </div>
-                 </div>
                  </form>
-                 <p>Biography:</p>
+
           </div>
 
     <!-- Optional JavaScript -->

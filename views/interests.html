@@ -29,100 +29,37 @@
             <!--            Heading-->
             <h1>Interests</h1>
             <hr>
-            <form action="profile-summary" method="post">
+
+            <form action="" method="post">
                 <div class="col-12">
+                    <check if="{{@errors['indoorActivities']}} || {{@errors['outdoorActivities']}}">
+                        <p class="text-danger">Please enter Interest Options</p>
+                    </check>
 
                     <h5>In-door Interests</h5>
-                                            <label class="custom-control custom-checkbox col-3 float-left">
+                    <repeat group="{{@indoorActivities}}" value="{{@value}}"
+                            key="{{@key}}">
+                        <label class="custom-control custom-checkbox col-3 float-left">
                             <input type="checkbox" name="indoorActivities[]"
-                                   value="tv"
+                                   value="{{@value}}"
 
-                            > <span class="pl-1">tv</span>
+                            > <span class="pl-1">{{$value}}</span>
                         </label>
-                                            <label class="custom-control custom-checkbox col-3 float-left">
-                            <input type="checkbox" name="indoorActivities[]"
-                                   value="movies"
-
-                            > <span class="pl-1">movies</span>
-                        </label>
-                                            <label class="custom-control custom-checkbox col-3 float-left">
-                            <input type="checkbox" name="indoorActivities[]"
-                                   value="cooking"
-
-                            > <span class="pl-1">cooking</span>
-                        </label>
-                                            <label class="custom-control custom-checkbox col-3 float-left">
-                            <input type="checkbox" name="indoorActivities[]"
-                                   value="board games"
-
-                            > <span class="pl-1">board games</span>
-                        </label>
-                                            <label class="custom-control custom-checkbox col-3 float-left">
-                            <input type="checkbox" name="indoorActivities[]"
-                                   value="puzzles"
-
-                            > <span class="pl-1">puzzles</span>
-                        </label>
-                                            <label class="custom-control custom-checkbox col-3 float-left">
-                            <input type="checkbox" name="indoorActivities[]"
-                                   value="reading"
-
-                            > <span class="pl-1">reading</span>
-                        </label>
-                                            <label class="custom-control custom-checkbox col-3 float-left">
-                            <input type="checkbox" name="indoorActivities[]"
-                                   value="playing cards"
-
-                            > <span class="pl-1">playing cards</span>
-                        </label>
-                                            <label class="custom-control custom-checkbox col-3 float-left">
-                            <input type="checkbox" name="indoorActivities[]"
-                                   value="video games"
-
-                            > <span class="pl-1">video games</span>
-                        </label>
-                                    </div>
+                    </repeat>
+                </div>
                 <br>
 
                 <div class="col-12 mt-5">
                     <h5>Out-door Interests</h5>
-                                            <label class="custom-control custom-checkbox col-3 float-left">
+                    <repeat group="{{@outdoorActivities}}" value="{{@value}}" key="{{@key}}">
+                        <label class="custom-control custom-checkbox col-3 float-left">
                             <input type="checkbox" name="outdoorActivities[]"
-                                   value="hiking"
+                                   value="{{@value}}"
 
-                            > <span class="pl-1">hiking</span>
+                            > <span class="pl-1">{{$value}}</span>
                         </label>
-                                            <label class="custom-control custom-checkbox col-3 float-left">
-                            <input type="checkbox" name="outdoorActivities[]"
-                                   value="biking"
-
-                            > <span class="pl-1">biking</span>
-                        </label>
-                                            <label class="custom-control custom-checkbox col-3 float-left">
-                            <input type="checkbox" name="outdoorActivities[]"
-                                   value="swimming"
-
-                            > <span class="pl-1">swimming</span>
-                        </label>
-                                            <label class="custom-control custom-checkbox col-3 float-left">
-                            <input type="checkbox" name="outdoorActivities[]"
-                                   value="collecting"
-
-                            > <span class="pl-1">collecting</span>
-                        </label>
-                                            <label class="custom-control custom-checkbox col-3 float-left">
-                            <input type="checkbox" name="outdoorActivities[]"
-                                   value="walking"
-
-                            > <span class="pl-1">walking</span>
-                        </label>
-                                            <label class="custom-control custom-checkbox col-3 float-left">
-                            <input type="checkbox" name="outdoorActivities[]"
-                                   value="climbing"
-
-                            > <span class="pl-1">climbing</span>
-                        </label>
-                        </div>
+                    </repeat>
+                </div>
                 <!--Next button-->
                 <div class="">
                     <div class="text-right">

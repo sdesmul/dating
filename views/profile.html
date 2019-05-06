@@ -21,50 +21,76 @@
 
         <h1><strong>Profile</strong></h1>
          <hr>
-         <form action="interests" method="post">
-          <div class="row">
-          <!--right side of the container -->
-            <div class="col-lg-6 col-6">
+         <form action="" method="post">
 
-              <label class="w-100" ><strong>Email</strong><br>
-              <input class="w-100 form-control" type="text" name="email">
-              </label><br>
+                    <div class="row h-100">
+                        <div class="col-md-6 justify-content-start">
+                            <div class="form-group">
 
-              <label class="w-100" ><strong>State</strong><br>
-              <select name="state" class="custom-select w-10">
-                  <option selected>Pick a State</option>
-                  <option name="state" value="washington">Washington</option>
-                  <option name="state" value="california">California</option>
-                  <option name="state" value="idaho">Canada</option>
-                  <option name="state" value="oregon">Oregon</option>
-              </select>
-              </label><br>
+                                <label for="email" class="font-weight-bold">Email</label>
+                                <check if="{{@errorsProfile['email']}}">
+                                    <p class="text-danger">{{@errorsProfile['email']}}</p>
+                                </check>
+                                <input type="email" class="form-control" name="email"
+                                       id="email" value="{{@email}}" aria-describedby="email"
+                                       placeholder="Enter Email">
+                            </div>
+                            <div class="form-group">
+                                <label for="state" class="font-weight-bold">State</label>
+                                <check if="{{@errorsProfile['state']}}">
+                                    <p class="text-danger">{{@errorsProfile['state']}}</p>
+                                </check>
 
+                                <select class="form-control mb-0"
+                                        name="state" id="state">
+                                    <option value="WASHINGTON">WASHINGTON</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="genderLook"
+                                       class="form-label font-weight-bold mb-0">Seeking</label><br>
+                                <check if="{{@errorsProfile['genderLook'] }}">
+                                    <p class="text-danger">{{@errorsProfile['genderLook']}}</p>
+                                </check>
+                                <!--Male-->
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input mr-2" type="radio"
+                                               name="genderLook" id="genderLook" value="male"
+                                        <check if="{{@genderLook == 'male'}}">checked</check>
+                                        >Male
+                                    </label>
+                                </div>
 
-                <label><strong>Seeking</strong><br>
-                <div class="custom-control custom-radio custom-control-inline">
-                  <input type="radio" id="prefered_female" value="Female" name="prefered_gender" class="custom-control-input">
-                  <label class="custom-control-label" for="prefered_female" ><strong>Female</strong></label>
-                </div>
-                <div class="custom-control custom-radio custom-control-inline">
-                  <input type="radio" id="prefered_male" value="Male" name="prefered_gender" class="custom-control-input">
-                  <label class="custom-control-label" for="prefered_male"><strong>Male</strong></label>
-                </div>
-                </label>
+                                <!--Female-->
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input mr-2" type="radio"
+                                               name="genderLook" value="female"
+                                        <check if="{{@genderLook == 'female'}}">checked</check>
+                                        > Female
+                                    </label>
+                                </div>
 
-            </div>
-
-            <!--left side of the container-->
-            <div class="col-lg-6 col-6">
-
-            <label><strong>Biography</strong><br>
-            <textarea class="scroll" name="bio" ></textarea>
-            </label>
-
-
-            <input type="submit" class="btn btn-primary float-right mt-5" name="next" value="Next >">
-            </div>
-            </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="biography"
+                                       class="font-weight-bold">Biography</label>
+                                <check if="{{@errorsProfile['biography']}}">
+                                    <p class="text-danger">{{@errorsProfile['biography']}}</p>
+                                </check>
+                                <textarea class="form-control"
+                                          name="biography"
+                                          id="biography" rows="7">{{@biography}}</textarea>
+                            </div>
+                            <div class="d-flex align-items-end justify-content-end w-100">
+                                <button class="btn btn-primary" name="submit" id="submit">Next &gt;
+                                </button>
+                            </div>
+                        </div>
+                    </div>
             </form>
      </div>
 

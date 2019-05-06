@@ -25,57 +25,109 @@
     <div class="container shadow-sm p-3  m-5 bg-white rounded mx-auto">
         <h1>Personal Information</h1>
         <hr>
-        <form method="post" action="profile">
-      <div class="row">
-      <!--right side of the container -->
-        <div class="col-lg-8">
+        <form method="post" action="">
 
-             <label class="w-100"><strong>First Name</strong><br>
+                <div class="row">
+                    <!--Placed outside col-8 to lower privacy policy visually-->
+                    <div class="col-12">
+                        <label for="fname" class="form-label font-weight-bold mb-1">First
+                            Name</label>
+                        <check if="{{@errors['fname']}}">
+                            <p class="text-danger">{{ @errors['fname'] }}</p>
+                        </check>
+                    </div>
 
-             <div class="input-group mb-3">
-               <input type="text" name="first_name" class="form-control" placeholder="Name" aria-label="Recipient's username" aria-describedby="basic-addon2">
-               <div class="input-group-append">
-                 <span class="input-group-text" id="basic-addon2"> <i class="far fa-id-card"></i></span>
-               </div>
-             </div>
+                    <!--Most inputs except phone number-->
+                    <div class="col-8">
+                        <!--First Name-->
+                        <input class="form-control mb-2" type="text" value="{{@fname}}" name="fname"
+                               id="fname">
 
-             </label><br>
+                        <!--Last Nae-->
+                        <label for="lname" class="form-label font-weight-bold mb-1">Last
+                            Name</label>
 
-              <label class="w-100" ><strong>Last Name</strong><br>
-              <input class="w-100 form-control" type="text" name="last_name">
-              </label><br>
+                        <check if="{{@errors['lname']}}">
+                            <p class="text-danger">{{ @errors['lname'] }}</p>
+                        </check>
 
-             <label class="w-100"><strong>Age</strong><br>
-             <input class="w-100 form-control"  type="text" name="age">
-             </label><br>
+                        <input class="form-control mb-2" type="text" value="{{@lname}}" name="lname"
+                               id="lname">
 
-             <label class="w-100"><strong>Gender</strong><br>
-            <div class="custom-control custom-radio custom-control-inline">
-              <input type="radio" id="female" value="Female" name="gender" class="custom-control-input">
-              <label class="custom-control-label" for="female">Female</label>
-            </div>
-            <div class="custom-control custom-radio custom-control-inline">
-              <input type="radio" id="male" value="Male" name="gender" class="custom-control-input">
-              <label class="custom-control-label" for="male">Male</label>
-            </div>
-            </label>
+                        <!--Age-->
+                        <label for="age" class="form-label font-weight-bold mb-1">Age</label>
+                        <check if="{{@errors['age']}}">
+                            <p class="text-danger my-1">{{@errors['age']}}</p>
+                        </check>
+                        <input class="form-control mb-2" type="number" value="{{@age}}" name="age" id="age"
+                               max="101">
 
-            <label class="w-100"><strong>Phone Number</strong><br>
-            <input class="w-100 form-control"  type="text" name="phone">
-            </label>
+                        <label for="gender" class="form-label font-weight-bold mb-0">Gender</label><br>
+                        <check if="{{@errors['gender'] }}">
+                            <p class="text-danger">{{@errors['gender']}}</p>
+                        </check>
+                        <!--Male-->
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label">
+                                <input class="form-check-input mr-2" type="radio"
+                                       name="gender" id="gender" value="male"
+                                <check if="{{@gender == 'male'}}">checked</check>
+                                >Male
+                            </label>
+                        </div>
 
+                        <!--Female-->
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label">
+                                <input class="form-check-input mr-2" type="radio"
+                                       name="gender" value="female"
+                                <check if="{{@gender == 'female'}}">checked</check>
+                                > Female
+                            </label>
+                        </div>
 
+                    </div> <!--<div class="col-8">-->
 
-        </div>
-        <!--left side of the container-->
-        <div class="col-lg-4 ">
-            <p id="note" class="mt-4 p-2"><strong>Note:</strong> All information entered is protected by our
-            <span class="policy">privacy policy</span>. Profile information can only be viewed by others
-            with your permission.</p>
+                    <!-- Privacy Policy -->
+                    <div class="col-4 pt4">
+                        <div class="text-center rounded border border-secondary  px-2 py-2">
+                            <strong>Note:</strong> All our information entered is protected by our
+                            <span class="text-primary">privacy policy</span>. Profile information
+                            can only be viewed by others with your permission.
+                        </div>
+                    </div> <!--div class="col-4"-->
 
-       </div>
-                   <input type="submit"  class="btn btn-primary float-right" name="next" value="Next >">
-</div>
+                    <!--Phone Number-->
+                    <div class="col-8">
+                        <label for="phone" class="form-label font-weight-bold mb-1">Phone
+                            Number</label>
+                        <check if="{{@errors['phone']}}">
+                            <p class="text-danger">{{@errors['phone']}}</p>
+                        </check>
+                        <input class="form-control" type="text" value="{{@phone}}" id="phone" name="phone"
+                               pattern="[0-9]{10}" title="No dashes or slashes
+                               Ex format: 1231231231">
+                    </div> <!--div class="col-4"-->
+
+                    <!--Phone Number-->
+                    <div class="col-8">
+                        <label for="selectedMember" class="form-label font-weight-bold custom-checkbox mb-1">Premium Membership
+                        </label>
+                        <br>
+                        <input class="" type="checkbox" value="selectedMember" id="selectedMember" name="selectedMember">
+                        Sign me up for a Premium Account!
+                    </div>
+                    <!--div class="col-4"-->
+
+                    <!--Submit Button-->
+                    <div class="col-4">
+                        <div class="text-right">
+                            <input type="submit" value="Next >" name="submit"
+                                   class="btn btn-primary my-4">
+                        </div>
+                    </div> <!--div class="col-4"-->
+
+                </div> <!--<div class="row">-->
 
         </form>
         </div>
