@@ -6,12 +6,27 @@
  * Time: 7:31 PM
  */
 
+/**This class is for normal members
+ *
+ * This class is the non paid for option for
+ * member
+ * Class Member
+ * @author samantha desmul <samanthadesmul@mail.greenriver.edu>
+ */
+
 class Member
 {
     protected $fname, $lname, $age, $gender, $phone, $email, $state, $seeking, $bio, $img,
         $isPremium = false;
 
-
+    /**Constructor for member
+     * Member constructor.
+     * @param $fname firstname
+     * @param $lname lastname
+     * @param $age age
+     * @param $gender gender
+     * @param $phone phone
+     */
     public function __construct($fname, $lname, $age, $gender, $phone)
     {
         $this->fname = $fname;
@@ -21,176 +36,178 @@ class Member
         $this->phone = $phone;
     }
 
-    /**
-     * @return mixed
+    /**get state
+     * @return state
      */
     public function getState()
     {
         return $this->state;
     }
 
-    /**
-     * @param mixed $state
+    /**set state
+     *
+     * @param $state
      */
     public function setState($state)
     {
         $this->state = $state;
     }
 
-    /**
-     * @return mixed
+    /**get imgage
+     * @return img
      */
     public function getImg()
     {
         return $this->img;
     }
 
-    /**
-     * @param mixed $img
+    /**set image
+     * @param  $img
      */
     public function setImg($img)
     {
         $this->img = $img;
     }
 
-    /**
-     * @return mixed
+    /**get is premium membership
+     * @return $isPremium
      */
     public function getIsPremium()
     {
         return $this->isPremium;
     }
 
-    /**
-     * @param mixed $isPremium
+    /**set is premium
+     * @param $isPremium
      */
     public function setIsPremium($isPremium)
     {
         $this->isPremium = $isPremium;
     }
 
-    /**
-     * @return mixed
+    /**get first name
+     *
+     * @return $Fname
      */
     public function getFname()
     {
         return $this->fname;
     }
 
-    /**
-     * @param mixed $fname
+    /**set first name
+     * @param $fname
      */
     public function setFname($fname)
     {
         $this->fname = $fname;
     }
 
-    /**
-     * @return mixed
+    /**get last name
+     * @return $lname
      */
     public function getLname()
     {
         return $this->lname;
     }
 
-    /**
-     * @param mixed $lname
+    /**set last name
+     * @param  $lname
      */
     public function setLname($lname)
     {
         $this->lname = $lname;
     }
 
-    /**
-     * @return mixed
+    /**get age
+     * @return $age
      */
     public function getAge()
     {
         return $this->age;
     }
 
-    /**
-     * @param mixed $age
+    /**set age
+     * @param  $age
      */
     public function setAge($age)
     {
         $this->age = $age;
     }
 
-    /**
-     * @return mixed
+    /**get gender
+     * @return $gender
      */
     public function getGender()
     {
         return $this->gender;
     }
 
-    /**
-     * @param mixed $gender
+    /**set gender
+     * @param  $gender
      */
     public function setGender($gender)
     {
         $this->gender = $gender;
     }
 
-    /**
-     * @return mixed
+    /**get phone number
+     * @return $phone
      */
     public function getPhone()
     {
         return $this->phone;
     }
 
-    /**
-     * @param mixed $phone
+    /**set phone number
+     * @param $phone
      */
     public function setPhone($phone)
     {
         $this->phone = $phone;
     }
 
-    /**
-     * @return mixed
+    /**get email
+     * @return $email
      */
     public function getEmail()
     {
         return $this->email;
     }
 
-    /**
-     * @param mixed $email
+    /**set email
+     * @param $email
      */
     public function setEmail($email)
     {
         $this->email = $email;
     }
 
-    /**
-     * @return mixed
+    /**get seeking
+     * @return $seeking
      */
     public function getSeeking()
     {
         return $this->seeking;
     }
 
-    /**
-     * @param mixed $seeking
+    /**set seeking
+     * @param $seeking
      */
     public function setSeeking($seeking)
     {
         $this->seeking = $seeking;
     }
 
-    /**
-     * @return mixed
+    /**get bio
+     * @return $bio
      */
     public function getBio()
     {
         return $this->bio;
     }
 
-    /**
-     * @param mixed $bio
+    /**set bio
+     * @param  $bio
      */
     public function setBio($bio)
     {
