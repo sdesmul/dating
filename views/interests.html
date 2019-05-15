@@ -32,9 +32,6 @@
 
             <form action="" method="post">
                 <div class="col-12">
-                    <check if="{{@errors['indoorActivities']}} || {{@errors['outdoorActivities']}}">
-                        <p class="text-danger">Please enter Interest Options</p>
-                    </check>
 
                     <h5>In-door Interests</h5>
                     <repeat group="{{@indoorActivities}}" value="{{@value}}"
