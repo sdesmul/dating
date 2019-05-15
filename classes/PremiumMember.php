@@ -6,11 +6,27 @@
  * Time: 8:09 PM
  */
 
-
+/**This is the class for a premium memeber
+ *
+ * The premium member class is an option users
+ * may choose to pay for extra features
+ * Class PremiumMember
+ * @author samantha desmul <samanthadesmul@mail.greenriver.edu>
+ */
 class PremiumMember extends Member
 {
     private $_indoorActivities, $_outdoorActivities;
 
+    /**
+     * PremiumMember constructor.
+     * @param $fname first name
+     * @param $lname last name
+     * @param $age age of user
+     * @param $gender gender
+     * @param $phone phone number
+     * @param $indoorActivities indoor activities
+     * @param $outdoorActivities outdoor actitities
+     */
     public function __construct($fname, $lname, $age, $gender, $phone, $indoorActivities,
                                 $outdoorActivities)
     {
@@ -20,32 +36,32 @@ class PremiumMember extends Member
         $this->setIsPremium(true);
     }
 
-    /**
-     * @return mixed
+    /**get indoor activities
+     * @return indoor
      */
     public function getIndoorActivities()
     {
         return $this->_indoorActivities;
     }
 
-    /**
-     * @param mixed $indoorActivities
+    /**set indoor activities
+     * @param $indoorActivities
      */
     public function setIndoorActivities($indoorActivities)
     {
         $this->_indoorActivities = $indoorActivities;
     }
 
-    /**
-     * @return mixed
+    /**get outdooractitities
+     * @return outdoor
      */
     public function getOutdoorActivities()
     {
         return $this->_outdoorActivities;
     }
 
-    /**
-     * @param mixed $outdoorActivities
+    /**set outdoor activities
+     * @param $outdoorActivities
      */
     public function setOutdoorActivities($outdoorActivities)
     {
