@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"
+          integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+
+<!--Create a contrainer to hold row-->
+<div class="container">
+
+    <!-- As a heading -->
+    <nav class="navbar navbar-light border border-left-0 border-right-0 border-top-0 mb-2">
+        <h1 class="navbar-brand mb-0"><a href="{{@BASE}}" class="text-success">My Dating Website</a></h1>
+    </nav>
+
+
+    <div class="row border mx-5 pt-3 pr-3 pb-3">
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Age</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Email</th>
+                <th scope="col">State</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Seeking</th>
+                <th scope="col">Premium</th>
+                <th scope="col">Interests</th>
+            </tr>
+            </thead>
+            <tbody>
+            <repeat group="{{ @members }}" key="{{@i}}" value="{{@member}}">
+                <tr>
+                    <th scope="row">{{@member['member_id']}}</th>
+                    <td>{{@member['fname']}} {{@member['lname']}}</td>
+                    <td>{{@member['age']}}</td>
+                    <td>{{@member['phone']}}</td>
+                    <td>{{@member['email']}}</td>
+                    <td>{{@member['state']}}</td>
+                    <td>{{@member['gender']}}</td>
+                    <td>{{@member['seeking']}}</td>
+
+                    <check if="{{@member['premium']}}">
+                        <true>
+                            <td class="custom-control custom-checkbox ml-5"><input id="premium_{{ @i }}"
+                                       class="custom-control-input"
+                                       type="checkbox"
+                                       checked="checked"/>
+                                <label for="premium_{{ @i }}" class="custom-control-label"></label>
+                            </td>
+                        </true>
+                        <false>
+                            <td class="custom-control custom-checkbox ml-5">
+
+                                <input id="premium_{{ @i }}"
+                                       class="custom-control-input"
+                                       type="checkbox"
+                                        disabled/>
+                                <label for="premium_{{ @i }}" class="custom-control-label"></label>
+
+                            </td>
+                        </false>
+                    </check>
+                    <td class="interested"> {{@member['interests'] }}</td>
+                </tr>
+            </repeat>
+            </tbody>
+        </table>
+
+
+        <!--        end row-->
+    </div>
+
+    <!--    end container-->
+</div>
+
+
+<!--Bootstrap cdn's-->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"
+        integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
+        crossorigin="anonymous"></script>
+</body>
+</html>
