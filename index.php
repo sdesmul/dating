@@ -17,7 +17,12 @@ session_start();
 
 //create an instance of the base class
 $f3 = Base::instance();
-;
+
+
+//db connection
+$DBobject = new Database();
+$conn = $DBobject->connect();
+
 
 ///fatfree enable error reporting
 $f3->set('DEBUG', 3); // highest is 3 lowest 0;
@@ -43,6 +48,10 @@ $f3->route('GET /', function () {
 $f3->route('GET|POST /pages/@pageName', function ($f3, $params) {
 
     switch ($params['pageName']) {
+
+        case 'admin':
+            echo Template::instance()->render("views/admin.html");
+
         //personal page
         case 'personal' :
             //if it is a post method request
@@ -205,8 +214,7 @@ $f3->route('GET|POST /pages/@pageName', function ($f3, $params) {
 //define a default rote to render home.html
 $f3->route('GET|POST /pages/results', function ($f3) {
 
-
-
+    global $DBobject;
     function exists(&$variable)
     {
         return isset($variable) && !empty($variable);
@@ -244,7 +252,7 @@ $f3->route('GET|POST /pages/results', function ($f3) {
     $bio = exists($memberUser->getBio()) ? $memberUser->getBio() : $_SESSION['biography'];
 
     if ($memberUser->getIsPremium() == 1) {
-        echo "<h1>YES</h1>";
+        echo "<script>console.log('primeMember');</script>";
     }
 
     $genderInitial = strtoupper(substr($gender, 0, 1));
@@ -252,10 +260,27 @@ $f3->route('GET|POST /pages/results', function ($f3) {
     $stateTag = strtoupper(substr($state, 0, 2));
 
 
+    $DBobject->addAccount($fname, $lname, $genderInitial, $seekInitial,
+        $email, $age, $phone, implode(",", $combineActivities),
+        $bio, $userPrime, $stateTag, NULL);
+
     echo Template::instance()->render("views/profile_summary.html");
 
 });
 
+
+$f3->route('GET|POST /pages/admin', function ($f3, $params) {
+
+    global $DBobject;
+
+    $members = $DBobject->displayMembers();
+
+    $f3->set('members', $members);
+
+
+    echo Template::instance()->render('views/admin.html');
+
+});
 
 
 //run fat free
